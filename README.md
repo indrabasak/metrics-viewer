@@ -32,7 +32,7 @@ The MetricsViewer depends on the following libraries:
  on D3 library.
 3. [jQuery](http://jquery.com/) is a quintessential JavaScriptIt for manipulating HTML documents.
 
-## Build
+# Build
 1. Check out the [library](ccc).
 2. Install [Node.js](http://nodejs.org).
 3. Install [gulp](http://gulpjs.com) from the project root directory.
@@ -67,7 +67,7 @@ P.S. If your OS does not recognize gulp, trying installing command line interfac
 ```   
     gulp test
 ``` 
-## License
+# License
 
 The __MetricsViewer.js__ code is shared under the terms of [Apache License v2.0](https://opensource.org/licenses/Apache-2.0).
 
