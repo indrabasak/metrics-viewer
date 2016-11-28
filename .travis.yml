@@ -12,6 +12,6 @@ script: gulp
 notifications:
   email:
     - indra.basak1@gmail.com
-    on_success: change
-    on_failure: always
-    use_notice: true
+  on_success: change
+  on_failure: always
+  use_notice: true
