@@ -16,8 +16,8 @@ metricsViewer.addCounter('#counter-div',
     "counter.test.metric.a");   
 ```
 
-The complete documentation can be found [here](examples/index.html). Other examples can be found on the
-[examples](examples/examples.html) page. 
+The complete documentation can be found [here](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/index.html). Other examples can be found on the
+[examples](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/examples.html) page. 
 
 ## Get Started
 1. Download the javascript and css files from [dist](dist) directory.
