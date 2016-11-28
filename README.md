@@ -22,8 +22,8 @@ The complete documentation can be found [here](https://cdn.rawgit.com/indrabasak
 ## Get Started
 1. Download the javascript and css files from [dist](dist) directory.
 2. Download the MetricsGraphics files either [lib](lib) directory or from [MetricsGraphics](https://github.com/mozilla/metrics-graphics/releases) site.The current version of MetricsViewer.js is based on MetricsGraphics.js v2.10.1 milestone.
-3. The documentation can be [here](examples/index.html).
-4. Follow the working examples [here](examples/examples.html).
+3. The documentation can be [here](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/index.html).
+4. Follow the working examples [here](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/examples.html).
 
 ## Dependencies
 The MetricsViewer depends on the following libraries:
