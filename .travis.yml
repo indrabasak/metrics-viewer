@@ -4,7 +4,7 @@ node_js:
   - "6"
   - "6.1"
   - "5.11"
-  - "0.10"
+#  - "0.10" doesn't allow 'strict' keyword
 #script: npm run test
 before_script:
   - npm install -g gulp
