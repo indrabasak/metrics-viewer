@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "6"
+  - "6"
+  - "6.1"
+  - "5.11"
+  - "0.10"
+#script: npm run test
+before_script:
+  - npm install -g gulp
+script: gulp
+notifications:
+email:
+    - indra.basak1@gmail.com
+    on_success: change
+    on_failure: always
+    use_notice: true
