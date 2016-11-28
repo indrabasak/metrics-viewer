@@ -1,0 +1,13 @@
+{
+  "version": "3.0.0",
+
+  "counters" : {
+    "counter.test.metric.a" : {
+      "count" : 5
+    },
+
+    "counter.test.metric.b" : {
+      "count" : 9
+    }
+  }
+}

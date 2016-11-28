@@ -1,0 +1,182 @@
+{
+  "version": "3.0.0",
+  "gauges": {
+    "jvm.fd.usage": {
+      "value": 0.040234375
+    },
+    "jvm.gc.PS-MarkSweep.count": {
+      "value": 3
+    },
+    "jvm.gc.PS-MarkSweep.time": {
+      "value": 360
+    },
+    "jvm.gc.PS-Scavenge.count": {
+      "value": 23
+    },
+    "jvm.gc.PS-Scavenge.time": {
+      "value": 512
+    },
+    "jvm.memory.heap.committed": {
+      "value": 1572864000
+    },
+    "jvm.memory.heap.init": {
+      "value": 268435456
+    },
+    "jvm.memory.heap.max": {
+      "value": 3817865216
+    },
+    "jvm.memory.heap.usage": {
+      "value": 0.3174908917476043
+    },
+    "jvm.memory.heap.used": {
+      "value": 1212137432
+    },
+    "jvm.memory.non-heap.committed": {
+      "value": 144687104
+    },
+    "jvm.memory.non-heap.init": {
+      "value": 2555904
+    },
+    "jvm.memory.non-heap.max": {
+      "value": -1
+    },
+    "jvm.memory.non-heap.usage": {
+      "value": -1.42347784E8
+    },
+    "jvm.memory.non-heap.used": {
+      "value": 142347784
+    },
+    "jvm.memory.pools.Code-Cache.committed": {
+      "value": 35979264
+    },
+    "jvm.memory.pools.Code-Cache.init": {
+      "value": 2555904
+    },
+    "jvm.memory.pools.Code-Cache.max": {
+      "value": 251658240
+    },
+    "jvm.memory.pools.Code-Cache.usage": {
+      "value": 0.14198099772135417
+    },
+    "jvm.memory.pools.Code-Cache.used": {
+      "value": 35730688
+    },
+    "jvm.memory.pools.Compressed-Class-Space.committed": {
+      "value": 12541952
+    },
+    "jvm.memory.pools.Compressed-Class-Space.init": {
+      "value": 0
+    },
+    "jvm.memory.pools.Compressed-Class-Space.max": {
+      "value": 1073741824
+    },
+    "jvm.memory.pools.Compressed-Class-Space.usage": {
+      "value": 0.011306434869766235
+    },
+    "jvm.memory.pools.Compressed-Class-Space.used": {
+      "value": 12140192
+    },
+    "jvm.memory.pools.Metaspace.committed": {
+      "value": 96165888
+    },
+    "jvm.memory.pools.Metaspace.init": {
+      "value": 0
+    },
+    "jvm.memory.pools.Metaspace.max": {
+      "value": -1
+    },
+    "jvm.memory.pools.Metaspace.usage": {
+      "value": 0.9824367659351307
+    },
+    "jvm.memory.pools.Metaspace.used": {
+      "value": 94476904
+    },
+    "jvm.memory.pools.PS-Eden-Space.committed": {
+      "value": 1236271104
+    },
+    "jvm.memory.pools.PS-Eden-Space.init": {
+      "value": 67108864
+    },
+    "jvm.memory.pools.PS-Eden-Space.max": {
+      "value": 1276641280
+    },
+    "jvm.memory.pools.PS-Eden-Space.usage": {
+      "value": 0.8323816757672131
+    },
+    "jvm.memory.pools.PS-Eden-Space.used": {
+      "value": 1062652808
+    },
+    "jvm.memory.pools.PS-Old-Gen.committed": {
+      "value": 258998272
+    },
+    "jvm.memory.pools.PS-Old-Gen.init": {
+      "value": 179306496
+    },
+    "jvm.memory.pools.PS-Old-Gen.max": {
+      "value": 2863661056
+    },
+    "jvm.memory.pools.PS-Old-Gen.usage": {
+      "value": 0.03755641114532795
+    },
+    "jvm.memory.pools.PS-Old-Gen.used": {
+      "value": 107548832
+    },
+    "jvm.memory.pools.PS-Survivor-Space.committed": {
+      "value": 77594624
+    },
+    "jvm.memory.pools.PS-Survivor-Space.init": {
+      "value": 11010048
+    },
+    "jvm.memory.pools.PS-Survivor-Space.max": {
+      "value": 77594624
+    },
+    "jvm.memory.pools.PS-Survivor-Space.usage": {
+      "value": 0.5404471320074957
+    },
+    "jvm.memory.pools.PS-Survivor-Space.used": {
+      "value": 41935792
+    },
+    "jvm.memory.total.committed": {
+      "value": 1717551104
+    },
+    "jvm.memory.total.init": {
+      "value": 270991360
+    },
+    "jvm.memory.total.max": {
+      "value": 3817865215
+    },
+    "jvm.memory.total.used": {
+      "value": 1354491936
+    },
+    "jvm.thread-states.blocked.count": {
+      "value": 0
+    },
+    "jvm.thread-states.count": {
+      "value": 72
+    },
+    "jvm.thread-states.daemon.count": {
+      "value": 48
+    },
+    "jvm.thread-states.deadlock.count": {
+      "value": 0
+    },
+    "jvm.thread-states.deadlocks": {
+      "value": []
+    },
+    "jvm.thread-states.new.count": {
+      "value": 0
+    },
+    "jvm.thread-states.runnable.count": {
+      "value": 15
+    },
+    "jvm.thread-states.terminated.count": {
+      "value": 0
+    },
+    "jvm.thread-states.timed_waiting.count": {
+      "value": 38
+    },
+    "jvm.thread-states.waiting.count": {
+      "value": 19
+    }
+  }
+}

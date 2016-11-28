@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 480 79" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic|Source+Sans+Pro:200,200italic,300,300italic,400,400italic,600,600italic,700,700italic,900,900italic);</style>
+  </defs>
+  <path d="M 250.966 32.636 Z" style="stroke: black; fill: none;"/>
+  <text x="76.109" y="49.975" transform="matrix(1.15719, 0, 0, 1, 28.613449, 3.067875)" style="fill: rgb(114, 157, 52); font-family: &quot;Source Sans Pro&quot;; font-size: 44px; white-space: pre;">MetricsViewer.js</text>
+  <text x="34.01" y="131.549" transform="matrix(1.618441, -0.004177, 0, 1.618441, -45.539871, -150.100754)" style="fill: rgb(114, 157, 52); font-size: 36px; white-space: pre;">M</text>
+  <text x="48.583" y="62.443" style="fill: rgb(114, 157, 52); font-size: 58.2px; white-space: pre;">V</text>
+</svg>

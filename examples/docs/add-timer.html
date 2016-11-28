@@ -1,0 +1,23 @@
+<div class='content'>
+    <header class='main-header'>
+        <h1>Timer Metrics Viewer</h1>
+    </header>
+    <p>
+        A timer measures at which a piece of code is called and the distribution of its duration. A timer metrics viewer
+        displays the following graphs:
+    <ol>
+        <li>Duration graph displays the min, mean, and max metric values.</li>
+        <li>Histogram graph displays the percentile metric values.</li>
+        <li>Frequency graph displays the rate metric values.</li>
+    </ol>
+
+    A timer viewer is created by calling <code>addTimer</code>.
+    </p>
+    <pre><code class="javascript">metricsViewer.addTimer('#timer-div',
+    "Timer Metrics Viewer Example",
+    "Metric Viewer Example of Timer Metrics", "timer.test.metric.a");
+    </code></pre>
+    <p>
+        There is no multiple timer metrics viewer.
+    </p>
+</div>

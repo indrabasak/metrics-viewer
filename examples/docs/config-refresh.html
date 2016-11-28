@@ -1,0 +1,51 @@
+<div class='content'>
+    <header class='main-header'>
+        <h1>Refresh</h1>
+    </header>
+    <p>
+        A static metric viewer is not very exciting. If you want to update your metric viewer every time you receive a
+        new batch of metric data, you have to update the viewer by calling <code>refresh</code>. It accepts JSON
+        Dropwizard metric data as its input.
+    </p>
+    <p>
+        At any given time, a metric viewer can display up to 100 metric data points on a graph. The time shown on the
+        x-axis is the time at which the metric viewer was updated.
+
+    </p>
+    <pre><code class="javascript">//refresh the viewer with new Dropwizard metrics data
+metricsViewer.refresh(data); </code></pre>
+
+    <p>
+        You can set up a timer if you want to refresh the viewer periodically.
+    </p>
+    <pre><code class="javascript">function addViewer() {
+    metricsViewer.addCounter('#counter-div', "Counter Metrics Viewer Example",
+    "Metric Viewer Example of Counter Metrics", "counter.test.metric.a");
+}
+
+$(document).ready(function () {
+    addViewers();
+    metricsViewer.init();
+    keepRefreshingViewer();
+});
+
+function keepRefreshingViewer() {
+    refreshViewer();
+    setTimeout(refreshViewer, 1000);
+}
+
+//fetching metrics from an endpoint using JQuery ajax call
+function refreshViewer() {
+    var url = "http://example.com";
+    $.ajax({
+        contentType: "application/json",
+        url: url,
+        success: function (data) {
+            metricsViewer.refresh(data);
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert("Error - " + xhr.status + "Message: " + thrownError);
+        },
+        async: true
+});</code></pre>
+</div>
