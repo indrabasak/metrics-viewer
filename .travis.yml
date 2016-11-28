@@ -10,7 +10,7 @@ before_script:
   - npm install -g gulp
 script: gulp
 notifications:
-email:
+  email:
     - indra.basak1@gmail.com
     on_success: change
     on_failure: always
