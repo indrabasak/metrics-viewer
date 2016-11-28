@@ -16,13 +16,13 @@ metricsViewer.addCounter('#counter-div',
     "counter.test.metric.a");   
 ```
 
-The complete documentation can be found [here](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/index.html). Other examples can be found on the
-[examples](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/examples.html) page. 
+The complete documentation can be found [here](https://cdn.rawgit.com/indrabasak/metrics-viewer/f7856ae7ac5b21cf5509de27a3a2534bf0a07696/examples/index.html). 
+Other examples can be found on the [examples](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/examples.html) page. 
 
 ## Get Started
 1. Download the javascript and css files from [dist](dist) directory.
 2. Download the MetricsGraphics files either [lib](lib) directory or from [MetricsGraphics](https://github.com/mozilla/metrics-graphics/releases) site.The current version of MetricsViewer.js is based on MetricsGraphics.js v2.10.1 milestone.
-3. The documentation can be [here](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/index.html).
+3. The documentation can be [here](https://cdn.rawgit.com/indrabasak/metrics-viewer/f7856ae7ac5b21cf5509de27a3a2534bf0a07696/examples/index.html).
 4. Follow the working examples [here](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/examples.html).
 
 ## Dependencies
