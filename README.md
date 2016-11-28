@@ -1,4 +1,4 @@
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Build Status][travis-badge]][travis-badge-url]
 
 ![logo](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/images/logo.svg)
 
@@ -70,4 +70,7 @@ P.S. If your OS does not recognize gulp, trying installing command line interfac
 ## License
 
 The __MetricsViewer.js__ code is shared under the terms of [Apache License v2.0](https://opensource.org/licenses/Apache-2.0).
+
+[travis-badge]: https://travis-ci.org/indrabasak/metrics-viewer.svg?branch=master
+[travis-badge-url]: https://travis-ci.org/indrabasak/metrics-viewer
 
