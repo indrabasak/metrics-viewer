@@ -1,0 +1,118 @@
+<div class='row trunk-section'>
+    <div class='col-lg-8 text-left' id='counter-div'></div>
+    <div class='col-lg-4'>
+        <div class='data-column'><a href='data/counter-metrics.json'>data</a></div>
+
+<pre><code class='javascript'>function addViewers() {
+    metricsViewer.addCounter('#counter-div',
+    "Counter Metrics Viewer Example",
+    "Metric Viewer Example of Counter Metrics",
+    "counter.test.metric.a");
+}
+
+$(function() {
+    addViewers();
+    metricsViewer.init();
+    keepRefreshingViewer();
+});
+
+function keepRefreshingViewer() {
+    refreshViewer();
+    setInterval(refreshViewer, 2000);
+}
+
+function refreshViewer() {
+    $.getJSON('data/counter-metrics.json',
+            function (data) {
+        metricsViewer.refresh(data);
+    });
+}
+</code></pre>
+
+    </div>
+</div>
+
+<div class='row trunk-section'>
+    <div class='col-lg-8 text-left' id='counter-multi-div'></div>
+    <div class='col-lg-4'>
+        <div class='data-column'><a href='data/counter-metrics.json'>data</a></div>
+
+        <pre><code class='javascript'>function addMultiViewers() {
+    metricsViewer.addMultiCounter('#counter-multi-div',
+        "Multiple Counter Metrics Viewer Example",
+        "Metric Viewer Example of Multiple Counter Metrics",
+            ["counter.test.metric.a", "counter.test.metric.b"]);
+}
+
+$(function() {
+    addMultiViewers();
+    metricsViewer.init();
+    keepRefreshingMultiViewer();
+});
+
+function keepRefreshingMultiViewer() {
+    refreshMultiViewer();
+    setInterval(refreshMultiViewer, 2000);
+}
+
+function refreshMultiViewer() {
+    $.getJSON('data/counter-metrics.json',
+            function (data) {
+        metricsViewer.refresh(data);
+    });
+}
+</code></pre>
+
+    </div>
+</div>
+
+<script>
+    function addViewers() {
+        metricsViewer.addCounter('#counter-div', "Counter Metrics Viewer Example",
+                "Metric Viewer Example of Counter Metrics", "counter.test.metric.a");
+    }
+
+    //when document.readyState === 'complete
+    $(function () {
+        addViewers();
+        metricsViewer.init();
+        keepRefreshingViewer();
+    });
+
+    function keepRefreshingViewer() {
+        refreshViewer();
+        var timer = setInterval(refreshViewer, 2000);
+        example.addTimer(timer);
+    }
+
+    function refreshViewer() {
+        $.getJSON('data/counter-metrics.json', function (data) {
+            metricsViewer.refresh(data);
+        });
+    }
+
+    function addMultiViewers() {
+        metricsViewer.addMultiCounter('#counter-multi-div',
+                "Multiple Counter Metrics Viewer Example",
+                "Metric Viewer Example of Multiple Counter Metrics",
+                ["counter.test.metric.a", "counter.test.metric.b"]);
+    }
+
+    $(function () {
+        addMultiViewers();
+        metricsViewer.init();
+        keepRefreshingMultiViewer();
+    });
+
+    function keepRefreshingMultiViewer() {
+        refreshMultiViewer();
+        var timer = setInterval(refreshMultiViewer, 2000);
+        example.addTimer(timer);
+    }
+
+    function refreshMultiViewer() {
+        $.getJSON('data/counter-metrics.json', function (data) {
+            metricsViewer.refresh(data);
+        });
+    }
+</script>

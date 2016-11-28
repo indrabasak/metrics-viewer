@@ -1,0 +1,13 @@
+{
+  "version": "3.0.0",
+
+  "gauges" : {
+    "gauge.test.metric.a" : {
+      "value" : 17
+    },
+
+    "gauge.test.metric.b" : {
+      "value" : 28
+    }
+  }
+}

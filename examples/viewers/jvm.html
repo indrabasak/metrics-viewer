@@ -1,0 +1,58 @@
+<div class='row trunk-section'>
+    <div class='col-lg-8 text-left' id='jvm-div'></div>
+    <div class='col-lg-4'>
+        <div class='data-column'><a href='data/jvm-metrics.json'>data</a></div>
+
+<pre><code class='javascript'>function addViewers() {
+    metricsViewer.addJvm('#jvm-div',
+        "JVM Metrics Viewer Example",
+        "Metric Viewer Example of JVM Metrics");
+}
+
+$(function() {
+    addViewers();
+    metricsViewer.init();
+    keepRefreshingViewer();
+});
+
+function keepRefreshingViewer() {
+    refreshViewer();
+    setInterval(refreshViewer, 2000);
+}
+
+function refreshViewer() {
+    $.getJSON('data/jvm-metrics.json',
+            function (data) {
+        metricsViewer.refresh(data);
+    });
+}
+</code></pre>
+
+    </div>
+</div>
+
+<script>
+    function addViewers() {
+        metricsViewer.addJvm('#jvm-div', "JVM Metrics Viewer Example",
+                "Metric Viewer Example of JVM Metrics");
+    }
+
+    //when document.readyState === 'complete
+    $(function () {
+        addViewers();
+        metricsViewer.init();
+        keepRefreshingViewer();
+    });
+
+    function keepRefreshingViewer() {
+        refreshViewer();
+        var timer = setInterval(refreshViewer, 2000);
+        example.addTimer(timer);
+    }
+
+    function refreshViewer() {
+        $.getJSON('data/jvm-metrics.json', function (data) {
+            metricsViewer.refresh(data);
+        });
+    }
+</script>

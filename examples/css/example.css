@@ -1,0 +1,381 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url("../fonts/SourceSansPro/sourcesanspro-regular-webfont.eot");
+    src: url("../fonts/SourceSansPro/sourcesanspro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SourceSansPro/sourcesanspro-regular-webfont.woff") format("woff"), url("../fonts/SourceSansPro/sourcesanspro-regular-webfont.ttf") format("truetype"), url("../fonts/SourceSansPro/sourcesanspro-regular-webfont.svg#source_sans_proregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url("../fonts/SourceSansPro/sourcesanspro-semibold-webfont.eot");
+    src: url("../fonts/SourceSansPro/sourcesanspro-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SourceSansPro/sourcesanspro-semibold-webfont.woff") format("woff"), url("../fonts/SourceSansPro/sourcesanspro-semibold-webfont.ttf") format("truetype"), url("../fonts/SourceSansPro/sourcesanspro-semibold-webfont.svg#source_sans_prosemibold") format("svg");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url("../fonts/SourceSansPro/sourcesanspro-light-webfont.eot");
+    src: url("../fonts/SourceSansPro/sourcesanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SourceSansPro/sourcesanspro-light-webfont.woff") format("woff"), url("../fonts/SourceSansPro/sourcesanspro-light-webfont.ttf") format("truetype"), url("../fonts/SourceSansPro/sourcesanspro-light-webfont.svg#source_sans_prolight") format("svg");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url("../fonts/Inconsolata/inconsolata-regular-webfont.eot");
+    src: url("../fonts/Inconsolata/inconsolata-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Inconsolata/inconsolata-regular-webfont.woff") format("woff"), url("../fonts/Inconsolata/inconsolata-regular-webfont.ttf") format("truetype"), url("../fonts/Inconsolata/inconsolata-regular-webfont.svg#inconsolataregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*@font-face {*/
+    /*font-family: 'Inconsolata';*/
+    /*src: url("../fonts/Inconsolata/inconsolata-bold-webfont.eot");*/
+    /*src: url("../fonts/Inconsolata/inconsolata-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Inconsolata/inconsolata-bold-webfont.woff") format("woff"), url("../fonts/Inconsolata/inconsolata-bold-webfont.ttf") format("truetype"), url("../fonts/Inconsolata/inconsolata-bold-webfont.svg#inconsolatabold") format("svg");*/
+    /*font-weight: 500;*/
+    /*font-style: normal;*/
+/*}*/
+
+.head {
+    color: black;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 100%;
+
+    /*background-color: #f9fcf6;*/
+    font-weight: 500;
+    position: relative;
+    max-width: 62em;
+    margin: 0 auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.trunk-section {
+    border-top: 1px solid #ccc;
+    padding-bottom: 25px;
+    padding-top: 15px;
+}
+
+.footer {
+    font-size: 0.9rem;
+    padding: 40px;
+    text-align: center;
+
+    border-top: 1px solid #eee;
+    margin: 1em 0 0 0;
+    padding: 1em 0 1em 0;
+}
+
+.footer p {
+    max-width: 64em;
+    margin: 0 auto;
+    font-size: 0.8em;
+    color: #999;
+}
+
+
+a,
+a:active,
+a:visited {
+    /*color: steelblue;*/
+    color: #667C26;
+    text-decoration: none;
+}
+
+a:hover {
+    /*color: steelblue;*/
+    color: #667C26;
+}
+
+a.active {
+    /*background-color: steelblue;*/
+    background-color: #667C26;
+    border: 0;
+    border-radius: 24px;
+    color: #fff;
+    padding: 2px 8px 2px 8px;
+    text-decoration: none;
+}
+
+a.examples-options.selected {
+    font-weight: bold;
+}
+
+a:hover.examples-options {
+    text-decoration: none;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    /*font-family: 'Open Sans', sans-serif, Arial;*/
+    font-family: 'Source Sans Pro', 'Arial', sans-serif;
+}
+
+.btn-group {
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.btn-group span.which-button {
+    font-weight: 300;
+    color: darkgray;
+}
+
+.btn-group span.title {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.data-column {
+    font-size: 0.9rem;
+    margin: 0;
+    position: absolute;
+    right: 0;
+}
+
+#description {
+    margin: auto;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.divider {
+    color: #000000;
+    opacity: 0.2;
+}
+
+.examples-options {
+    font-size: 0.8rem;
+}
+
+.float-right {
+    float: right;
+}
+
+.footer {
+    font-size: 0.9rem;
+    padding: 40px;
+    text-align: center;
+}
+
+/*.head {*/
+    /*color: black;*/
+    /*margin: auto;*/
+    /*margin-bottom: 20px;*/
+    /*width: 100%;*/
+/*}*/
+
+/*
+.head h1 {
+    font-size: 4.1rem;
+    font-weight: 300;
+    margin: 45px 0 0 0;
+}
+*/
+
+ul {
+    clear: both;
+    font-size: 1.2rem;
+    padding: 10px 0 0 0;
+}
+
+.head ul li,
+ul.examples li {
+    display: inline;
+    list-style: none;
+    padding-right: 15px;
+}
+
+ul li.no-padding {
+    padding: 0;
+}
+
+ul.examples li {
+    line-height: 30px;
+}
+
+html {
+    font-size: 12px;
+}
+
+/*.legend {
+    font-size: 0.9rem;
+    padding: 25px 0 15px 0;
+}*/
+
+#logo {
+    margin: 60px 0 30px 0;
+    height: 79px;
+    width: 400px;
+}
+
+p {
+    /*font-family: 'PT Serif', serif;*/
+    font-family: 'Source Sans Pro', 'Arial', sans-serif;
+    font-size: 1.3rem;
+    line-height: 24px;
+}
+
+.viewer {
+    font-family: 'Source Sans Pro', 'Arial', sans-serif;
+    /*font-family: 'Open Sans', serif;*/
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.viewer:hover {
+    text-decoration: none;
+}
+
+pre {
+    background-color: transparent;
+    border: 0;
+    border-left: 2px solid #ccc;
+    border-radius: 0;
+    font-size: 0.9rem;
+    margin: 40px 0 0 10px;
+    overflow-x: auto;
+    padding: 0;
+    width: 100%;
+    word-wrap: normal;
+}
+
+pre code {
+    white-space: inherit;
+}
+
+pre code.hljs {
+    background-color: transparent;
+}
+
+pre, code, text-area {
+    /*font-family: "Menlo", monospace;*/
+
+    font-family: 'Inconsolata', monospace;
+    /*border: 1px solid #eee;*/
+    /*border-radius: 0.2em;*/
+    /*background-color: #f9fcf6;*/
+    /*color: #000;*/
+    font-weight: normal;
+    font-size: 0.9em;
+    /*padding: 0.15em 0.3em;*/
+    /*position: relative;*/
+}
+
+#table1 .chart_title {
+    margin-left: 0;
+}
+
+/*#torso {*/
+    /*margin: 0 auto;*/
+    /*text-align: center;*/
+    /*width: 100%;*/
+/*}*/
+
+/*#torso div {*/
+    /*display: inline-block;*/
+/*}*/
+
+#trunk {
+    margin-top: 40px;
+}
+
+/*#trunk h2 {
+    font-size: 1.2rem;
+}
+
+#trunk h2.trunk-title {
+    font-size: 2.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}*/
+
+
+.trunk-section {
+    border-top: 1px solid #ccc;
+    padding-bottom: 25px;
+    padding-top: 15px;
+}
+
+/*
+nav {
+    position: relative;
+    width: 100%;
+    background-color: #f9fcf6;
+    font-weight: 500;
+}
+
+nav ul, nav li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.4s ease-out;
+    -moz-transition: height 0.4s ease-out;
+    -ms-transition: height 0.4s ease-out;
+    -o-transition: height 0.4s ease-out;
+    transition: height 0.4s ease-out;
+}
+
+nav ul .selected {
+    background-color: #729d34;
+    color: white;
+}
+
+nav ul .selected a {
+    color: white;
+}
+
+nav li {
+    display: block;
+}
+
+nav a {
+    display: block;
+    padding: 0.7em 0.7em 0.7em 1em;
+}
+
+nav button, nav button:hover, nav button:active, nav button:focus {
+    position: absolute;
+    color: #729d34;
+    border: none;
+    font-size: 1.4em;
+    padding: 0.35em 1em;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background-color: transparent;
+    line-height: 1;
+}
+
+nav button:focus, nav button:hover:focus, nav button:active:focus, nav button:focus:focus {
+    outline: none;
+}
+
+nav .github-wide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    padding-right: none;
+}
+
+.nav-inner {
+    position: relative;
+    max-width: 62em;
+    margin: 0 auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}*/

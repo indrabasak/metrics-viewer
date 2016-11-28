@@ -1,0 +1,59 @@
+<div class='row trunk-section'>
+    <div class='col-lg-8 text-left' id='meter-div'></div>
+    <div class='col-lg-4'>
+        <div class='data-column'><a href='data/meter-metrics.json'>data</a></div>
+
+<pre><code class='javascript'>function addViewers() {
+    metricsViewer.addMeter('#meter-div',
+    "Meter Metrics Viewer Example",
+    "Metric Viewer Example of Meter Metrics",
+    "meter.test.metric.a");
+}
+
+$(function() {
+    addViewers();
+    metricsViewer.init();
+    keepRefreshingViewer();
+});
+
+function keepRefreshingViewer() {
+    refreshViewer();
+    setInterval(refreshViewer, 2000);
+}
+
+function refreshViewer() {
+    $.getJSON('data/meter-metrics.json',
+            function (data) {
+        metricsViewer.refresh(data);
+    });
+}
+</code></pre>
+
+    </div>
+</div>
+
+<script>
+    function addViewers() {
+        metricsViewer.addMeter('#meter-div', "Meter Metrics Viewer Example",
+                "Metric Viewer Example of Meter Metrics", "meter.test.metric.a");
+    }
+
+    //when document.readyState === 'complete
+    $(function () {
+        addViewers();
+        metricsViewer.init();
+        keepRefreshingViewer();
+    });
+
+    function keepRefreshingViewer() {
+        refreshViewer();
+        var timer = setInterval(refreshViewer, 2000);
+        example.addTimer(timer);
+    }
+
+    function refreshViewer() {
+        $.getJSON('data/meter-metrics.json', function (data) {
+            metricsViewer.refresh(data);
+        });
+    }
+</script>

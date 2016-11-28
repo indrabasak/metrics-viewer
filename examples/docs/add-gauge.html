@@ -1,0 +1,22 @@
+<div class='content'>
+    <header class='main-header'>
+        <h1>Gauge Metrics Viewer</h1>
+    </header>
+    <p>
+        A gauge metric is similar to counter metrics and it is used to show an instantaneous measurement of a value. A
+        gauge metric viewer is created by calling <code>addGauge</code> method.
+    </p>
+    <pre><code class="javascript">metricsViewer.addGauge('#gauge-div',
+    "Gauge Metrics Viewer Example",
+    "Metric Viewer Example of Gauge Metrics", "gauge.test.metric.a");
+    </code></pre>
+    <p>
+        Multiple gauge metrics can be displayed in a single graph by calling <code>addMultiGauge</code> and providing an
+        array of metric names.
+    </p>
+    <pre><code class="javascript">metricsViewer.addMultiGauge('#gauge-multi-div',
+    "Gauge Metrics Viewer Example",
+    "Metric Viewer Example of Gauge Metrics",
+    ["gauge.test.metric.a", "gauge.test.metric.b"]);
+    </code></pre>
+</div>

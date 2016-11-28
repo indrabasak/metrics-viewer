@@ -1,0 +1,13 @@
+{
+  "version": "3.0.0",
+  "meters": {
+    "meter.test.metric.a": {
+      "count": 1,
+      "m15_rate": 0.1934432200964012,
+      "m1_rate": 0.12130613194252672,
+      "m5_rate": 0.1809674836071919,
+      "mean_rate": 0.025086609047332085,
+      "units": "events/second"
+    }
+  }
+}

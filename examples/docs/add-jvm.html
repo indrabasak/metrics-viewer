@@ -1,0 +1,25 @@
+<div class='content'>
+    <header class='main-header'>
+        <h1>JVM Metrics Viewer</h1>
+    </header>
+    <p>
+        A metric viewer to display metrics related to JVM. A JVM metrics viewer displays the following graphs:
+    <ol>
+        <li>Memory usage</li>
+        <li>Heap usage</li>
+        <li>Eden space usage</li>
+        <li>Survivor space usage</li>
+        <li>Old Gen usage</li>
+        <li>Thread usage</li>
+    </ol>
+
+    A JVM metric viewer is created by calling <code>addJvm</code>.
+    </p>
+    <pre><code class="javascript">metricsViewer.addJvm('#jvm-div',
+    "JVM Metrics Viewer Example",
+    "Metric Viewer Example of JVM Metrics");
+    </code></pre>
+    <p>
+        There is no multiple JVM metrics viewer.
+    </p>
+</div>

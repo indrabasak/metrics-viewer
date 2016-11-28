@@ -1,0 +1,76 @@
+<div class='content'>
+    <header class='main-header'>
+        <h1>Standard Usage</h1>
+    </header>
+    <p>
+        The bare minimum for using <code>MetricsViewer.js</code> on a web page is linking to the
+        <code>MetricsViewer.js</code>,
+        <code>MetricsGraphics.js</code>, <code>D3</code>, and <code>jQuery</code> libraries along with the styles of
+        <code>MetricsViewer.js</code> and <code>MetricsGraphics.js</code>.
+    </p>
+    <p>
+        Create a <code>HTML</code> page and add the specified css and the Javascript files. Assuming the
+        <code>MetricsViewer.js</code> and <code>MetricsGraphics.js</code> related css and JavaScript files are located
+        in <code>css</code> and <code>js</code> folders respectively.
+    </p>
+
+    <pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Simple Metrics Viewer Page&lt;/title&gt;
+
+        &lt;link href='css/metricsgraphics.css' rel='stylesheet' type='text/css'&gt;
+        &lt;link href='css/metricsviewer.css' rel='stylesheet' type='text/css'&gt;
+
+        &lt;script src="https://d3js.org/d3.v4.min.js"&gt;&lt;/script&gt;
+        &lt;script src='js/metricsgraphics.js'&gt;&lt;/script&gt;
+        &lt;script src='js/metricsviewer.js'&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt; </code></pre>
+
+    <p>Here is an example of adding, initializing, and refreshing the <code>MetricsViewer.js</code>.</p>
+
+    <pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        /* add the style sheets and javascripts from above */
+
+        &lt;script&gt;
+        function addViewer() {
+            metricsViewer.addCounter('#counter-div', "Counter Metrics Viewer Example",
+            "Metric Viewer Example of Counter Metrics", "counter.test.metric.a");
+        }
+
+        $(document).ready(function () {
+            addViewers();
+            metricsViewer.init();
+            keepRefreshingViewer();
+        });
+
+        function keepRefreshingViewer() {
+            refreshViewer();
+            setTimeout(refreshViewer, 1000);
+        }
+
+        //fetching metrics from an endpoint using JQuery ajax call
+        function refreshViewer() {
+            var url = "http://example.com";
+            $.ajax({
+                contentType: "application/json",
+                url: url,
+                success: function (data) {
+                    metricsViewer.refresh(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("Error - " + xhr.status + "Message: " + thrownError);
+                },
+                async: true
+            });
+        }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="counter-div"&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt; </code></pre>
+</div>

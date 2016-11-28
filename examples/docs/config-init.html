@@ -1,0 +1,22 @@
+<div class='content'>
+    <header class='main-header'>
+        <h1>Initialization</h1>
+    </header>
+    <p>
+        Once all the viewers are created, the metrics viewer must be initialized before it can be rendered. The
+        metrics viewer is initialized by calling <code>init</code>.
+
+    </p>
+    <pre><code class="javascript">metricsViewer.init();</code></pre>
+    <p>
+        The <code>init</code> must be invoked once the document is loaded.
+    </p>
+    <pre><code class="javascript">$(function () {
+    metricsViewer.init();
+});
+
+//another example
+$(document).ready(function () {
+    metricsViewer.init();
+});</code></pre>
+</div>
