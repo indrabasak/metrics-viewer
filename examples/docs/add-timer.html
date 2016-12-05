@@ -18,6 +18,14 @@
     "Metric Viewer Example of Timer Metrics", "timer.test.metric.a");
     </code></pre>
     <p>
+        A single property of a timer metric can be displayed in a graph by calling <code>addTimerWithProperty</code>
+        and providing a property name along with a metric name.
+    </p>
+    <pre><code class="javascript">metricsViewer.addTimerWithProperty('#timer-prop-div',
+    "Timer Metrics Viewer with One Property Example",
+    "Metric Viewer Example of a Single Timer Metric Property", "timer.test.metric.a", "min");
+    </code></pre>
+    <p>
         There is no multiple timer metrics viewer.
     </p>
 </div>

@@ -12,6 +12,14 @@
      "Metric Viewer Example of Meter Metrics", "meter.test.metric.a");
     </code></pre>
     <p>
-        There is no multiple gauge metrics viewer.
+        A single property of a meter metric can be displayed in a graph by calling <code>addMeterWithProperty</code>
+        and providing a property name along with a metric name.
+    </p>
+    <pre><code class="javascript">metricsViewer.addMeterWithProperty('#meter-prop-div',
+     "Meter Metrics Viewer with One Property Example",
+     "Metric Viewer Example of a Single Meter Metric Property", "meter.test.metric.a", "m1_rate");
+    </code></pre>
+    <p>
+        There is no multiple meter metrics viewer.
     </p>
 </div>
