@@ -151,13 +151,36 @@
      */
     metricsViewer.addMeter = function (divId, title, description, metricName) {
         var legend = [];
-        legend.push(new LegendData("1 min", "m1_rate", null, null));
-        legend.push(new LegendData("5 min", "m5_rate", null, null));
-        legend.push(new LegendData("15 min", "m15_rate", null, null));
-        legend.push(new LegendData("Mean", "mean_rate", null, null));
+
+        for (var key in meterLegendMap) {
+            var value = meterLegendMap[key];
+            legend.push(value);
+        }
+
         graphs.push(addGraph(divId, "meter", METRIC_TYPE.METER, metricName, title,
             description, legend, METRIC_TYPE.METER.xLabel, METRIC_TYPE.METER.yLabel,
             "units", false));
+    };
+
+    /**
+     * Create a metric viewer to display a metric property of type 'meter'.
+     *
+     * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
+     * @param {string} title the title of the chart
+     * @param {string} description the description of the chart
+     * @param {string} metricName the qualified name of the metric
+     * @param {string} property the name of the metric property to be displayed, e.g., 1-min rate, 5-min rate, etc.
+     */
+    metricsViewer.addMeterWithProperty = function (divId, title, description, metricName, property) {
+        var data = meterLegendMap[property];
+        if (data) {
+            var legend = [];
+            legend.push(data);
+
+            graphs.push(addGraph(divId, "meter", METRIC_TYPE.METER, metricName, title,
+                description, legend, METRIC_TYPE.METER.xLabel, METRIC_TYPE.METER.yLabel,
+                "units", false));
+        }
     };
 
     /**
@@ -174,32 +197,68 @@
      * @param {string} metricName the qualified name of the metric
      */
     metricsViewer.addTimer = function (divId, title, description, metricName) {
+        var key, value;
+
         var durLegend = [];
-        durLegend.push(new LegendData("Min", "min", null, null));
-        durLegend.push(new LegendData("Mean", "mean", null, null));
-        durLegend.push(new LegendData("Max", "max", null, null));
+        for (key in timerDurationLegendMap) {
+            value = timerDurationLegendMap[key];
+            durLegend.push(value);
+        }
         graphs.push(addGraph(divId, "duration", METRIC_TYPE.TIMER, metricName, title,
             description, durLegend, METRIC_TYPE.TIMER.xLabel, METRIC_TYPE.TIMER.yLabel,
             "duration_units", false));
 
         var histLegend = [];
-        histLegend.push(new LegendData("99.9%", "p999", null, null));
-        histLegend.push(new LegendData("99%", "p99", null, null));
-        histLegend.push(new LegendData("98%", "p98", null, null));
-        histLegend.push(new LegendData("95%", "p95", null, null));
-        histLegend.push(new LegendData("75%", "p75", null, null));
+        for (key in timerHistogramLegendMap) {
+            value = timerHistogramLegendMap[key];
+            histLegend.push(value);
+        }
         graphs.push(addGraph(divId, "histogram", METRIC_TYPE.TIMER, metricName, title,
             description, histLegend, METRIC_TYPE.TIMER.xLabel, METRIC_TYPE.TIMER.yLabel,
             "duration_units", false));
 
         var freqLegend = [];
-        freqLegend.push(new LegendData("1 min", "m1_rate", null, null));
-        freqLegend.push(new LegendData("5 min", "m5_rate", null, null));
-        freqLegend.push(new LegendData("15 min", "m15_rate", null, null));
-        freqLegend.push(new LegendData("Mean", "mean_rate", null, null));
+        for (key in timerFrequencyLegendMap) {
+            value = timerFrequencyLegendMap[key];
+            freqLegend.push(value);
+        }
         graphs.push(addGraph(divId, "frequency", METRIC_TYPE.TIMER, metricName, title,
             description, freqLegend, METRIC_TYPE.TIMER.xLabel, METRIC_TYPE.TIMER.yLabel,
             "rate_units", false));
+    };
+
+    /**
+     * Create a metric viewer to display a metric property of type 'time'.
+     *
+     * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
+     * @param {string} title the title of the chart
+     * @param {string} description the description of the chart
+     * @param {string} metricName the qualified name of the metric
+     * @param {string} property the name of the metric property to be displayed
+     */
+    metricsViewer.addTimerWithProperty = function (divId, title, description, metricName, property) {
+        var data;
+        var legend = [];
+
+        if (timerDurationLegendMap[property]) {
+            data = timerDurationLegendMap[property];
+            legend.push(data);
+            graphs.push(addGraph(divId, "duration", METRIC_TYPE.TIMER, metricName, title,
+                description, legend, METRIC_TYPE.TIMER.xLabel, METRIC_TYPE.TIMER.yLabel,
+                "duration_units", false));
+        } else if (timerHistogramLegendMap[property]) {
+            data = timerHistogramLegendMap[property];
+            legend.push(data);
+            graphs.push(addGraph(divId, "histogram", METRIC_TYPE.TIMER, metricName, title,
+                description, legend, METRIC_TYPE.TIMER.xLabel, METRIC_TYPE.TIMER.yLabel,
+                "duration_units", false));
+        } else if (timerFrequencyLegendMap[property]) {
+            data = timerFrequencyLegendMap[property];
+            legend.push(data);
+            graphs.push(addGraph(divId, "frequency", METRIC_TYPE.TIMER, metricName, title,
+                description, legend, METRIC_TYPE.TIMER.xLabel, METRIC_TYPE.TIMER.yLabel,
+                "rate_units", false));
+        }
     };
 
     /**
@@ -362,6 +421,50 @@
      */
     var BOTTOM_MARGIN = 50;
     Object.freeze(BOTTOM_MARGIN);
+
+    /**
+     * Maps meter metric property to legend
+     */
+    var meterLegendMap = {};
+    meterLegendMap["count"] = new LegendData("Count", "count", null, null);
+    meterLegendMap["m1_rate"] = new LegendData("1 min", "m1_rate", null, null);
+    meterLegendMap["m5_rate"] = new LegendData("5 min", "m5_rate", null, null);
+    meterLegendMap["m15_rate"] = new LegendData("15 min", "m15_rate", null, null);
+    meterLegendMap["mean_rate"] = new LegendData("Mean", "mean_rate", null, null);
+    Object.freeze(meterLegendMap);
+
+    /**
+     * Maps timer duration metric property to legend
+     */
+    var timerDurationLegendMap = {};
+    timerDurationLegendMap["count"] = new LegendData("Count", "count", null, null);
+    timerDurationLegendMap["min"] = new LegendData("Min", "min", null, null);
+    timerDurationLegendMap["mean"] = new LegendData("Mean", "mean", null, null);
+    timerDurationLegendMap["max"] = new LegendData("Max", "max", null, null);
+    timerDurationLegendMap["stddev"] = new LegendData("Std. dev", "stddev", null, null);
+    timerDurationLegendMap["p50"] = new LegendData("Median", "p50", null, null);
+    Object.freeze(timerDurationLegendMap);
+
+    /**
+     * Maps timer histogram metric property to legend
+     */
+    var timerHistogramLegendMap = {};
+    timerHistogramLegendMap["p999"] = new LegendData("99.9%", "p999", null, null);
+    timerHistogramLegendMap["p99"] = new LegendData("99%", "p99", null, null);
+    timerHistogramLegendMap["p98"] = new LegendData("98%", "p98", null, null);
+    timerHistogramLegendMap["p95"] = new LegendData("95%", "p95", null, null);
+    timerHistogramLegendMap["p75"] = new LegendData("75%", "p75", null, null);
+    Object.freeze(timerHistogramLegendMap);
+
+    /**
+     * Maps timer frequency metric property to legend
+     */
+    var timerFrequencyLegendMap = {};
+    timerFrequencyLegendMap["m1_rate"] = new LegendData("1 min", "m1_rate", null, null);
+    timerFrequencyLegendMap["m5_rate"] = new LegendData("5 min", "m5_rate", null, null);
+    timerFrequencyLegendMap["m15_rate"] = new LegendData("15 min", "m15_rate", null, null);
+    timerFrequencyLegendMap["mean_rate"] = new LegendData("Mean", "mean_rate", null, null);
+    Object.freeze(timerFrequencyLegendMap);
 
     /**
      * A cache of graph that will be displayed in a page
