@@ -6,3 +6,8 @@ title: Metrics Viewer
 description: JavaScript library for displaying Dropwizard Metrics
 
 author: Indra Basak
+
+logo: ./examples/images/small-logo_40px.png
+docs: ./examples/index.html
+demo: ./examples/examples.html
+blog: https://indrabasak.github.io
