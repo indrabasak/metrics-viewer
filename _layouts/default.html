@@ -15,17 +15,31 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="shortcut icon" type="image/png" href="./examples/images/small-logo_40px.png"/>
+    <link rel="shortcut icon" type="image/png" href="{{ site.logo }}"/>
 
 </head>
 <body>
 <div id="header-new">
     <nav>
-        <li class="logo"><a href="https://indrabasak.github.io/patra/">
-            <img height="30px" width="30px" src="./examples/images/small-logo_40px.png" alt="patra"/></a></li>
+        {% if site.logo %}
+        <li class="logo"><a href="{{ site.baseurl }}">
+            <img height="30px" width="30px" src="{{ site.logo }}" alt="{{ site.title }}"/></a></li>
+        {% endif %}
+
         <li class="fork"><a href="{{ site.github.repository_url }}">Source</a></li>
-        <li class="fork"><a href="./examples/index.html">Docs</a></li>
-        <li class="fork"><a href="./examples/examples.html">Demo</a></li>
+
+        {% if site.docs %}
+        <li class="fork"><a href="{{ site.docs }}">Docs</a></li>
+        {% endif %}
+
+        {% if site.demo %}
+        <li class="fork"><a href="{{ site.demo }}">Demo</a></li>
+        {% endif %}
+
+        {% if site.blog %}
+        <li class="fork"><a href="{{ site.blog }}">Blog</a></li>
+        {% endif %}
+
         {% if site.show_downloads %}
         <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
         <li class="downloads"><a href="{{ site.github.tar_url }}">TAR</a></li>
@@ -52,6 +66,7 @@
     <footer class="footer">
         <a href="{{ site.github.repository_url }}"><i class="svg-icon github"></i></a>
         <p><span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span></p>
+        <p class="copyright">&#169; {{ site.time | date: '%Y' }} - {{ site.author }}
     </footer>
 </div>
 
