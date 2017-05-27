@@ -1,6 +1,6 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Build Status][travis-badge]][travis-badge-url]
 
-![logo](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/images/logo.svg)
+![](./examples/images/logo-pale-blue-_373px.png)
 
 **MetricsViewer.js** is a simple JavaScript library for displaying  [Dropwizard Metrics](http://metrics.dropwizard.io/) data as line graphs. 
 Dropwizard metrics are formerly known as Coda Hale/Yammer metrics. The MetricsViewer.js library is based on [MetricsGraphics.js](http://metricsgraphicsjs.org) charting library.
