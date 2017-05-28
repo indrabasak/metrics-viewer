@@ -8,7 +8,7 @@
   }
 }(this, function($, MG) {
 /**
- * Copyright [2016] [Indra Basak and iovation, Inc.]
+ * Copyright [2016] [Indra Basak]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -352,7 +352,23 @@
     metricsViewer.clear = function () {
         while(graphs.length) {
             var graph = graphs.pop();
+
             $(graph.divId).empty();
+            delete graph.divId;
+
+            graph.values.clear();
+            delete graph.values;
+
+            graph.legendData.clear();
+            delete graph.legendData;
+
+            graph = undefined;
+        }
+    };
+
+    Array.prototype.clear = function() {
+        while (this.length) {
+            this.pop();
         }
     };
 
@@ -597,7 +613,7 @@
             MG.data_graphic({
                 title: this.title,
                 description: this.description,
-                animate_on_load: true,
+                //animate_on_load: true,
                 data: this.values,
                 width: CHART_WIDTH,
                 height: CHART_HEIGHT,
