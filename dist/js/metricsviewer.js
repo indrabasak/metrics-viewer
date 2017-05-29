@@ -1,14 +1,14 @@
 ;(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define(['jquery', 'MG'], factory);
+    define(['jquery', 'MG', 'd3'], factory);
   } else if (typeof exports === 'object') {
-    module.exports = factory(require('jquery'), require('MG'));
+    module.exports = factory(require('jquery'), require('MG'), require('d3'));
   } else {
-    root.metricsViewer = factory(root.jQuery, root.MG);
+    root.metricsViewer = factory(root.jQuery, root.MG, root.d3);
   }
-}(this, function($, MG) {
+}(this, function($, MG, d3) {
 /**
- * Copyright [2016] [Indra Basak and iovation, Inc.]
+ * Copyright [2016] [Indra Basak]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -352,7 +352,23 @@
     metricsViewer.clear = function () {
         while(graphs.length) {
             var graph = graphs.pop();
+
             $(graph.divId).empty();
+            delete graph.divId;
+
+            graph.values.clear();
+            delete graph.values;
+
+            graph.legendData.clear();
+            delete graph.legendData;
+
+            graph = undefined;
+        }
+    };
+
+    Array.prototype.clear = function() {
+        while (this.length) {
+            this.pop();
         }
     };
 
@@ -593,11 +609,14 @@
                 this.initialized = true;
             }
 
+            $(this.divId).empty();
+
             //call the metric graphics to create the line chart
             MG.data_graphic({
                 title: this.title,
                 description: this.description,
-                animate_on_load: true,
+                //animate_on_load: true,
+                area: false,
                 data: this.values,
                 width: CHART_WIDTH,
                 height: CHART_HEIGHT,
@@ -612,7 +631,12 @@
                 left: LEFT_MARGIN,
                 bottom: BOTTOM_MARGIN,
                 legend: this.legend,
-                legend_target: this.legendDivId
+                legend_target: this.legendDivId,
+                mouseover: function(d, i) {
+                    var format = d3.timeFormat("%b %d, %Y %H:%M:%S %p");
+                    d3.select(this.divId + ' svg .mg-active-datapoint')
+                        .text(format(d.date));
+                }
             });
         };
 
