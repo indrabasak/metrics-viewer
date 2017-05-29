@@ -600,11 +600,14 @@
                 this.initialized = true;
             }
 
+            $(this.divId).empty();
+
             //call the metric graphics to create the line chart
             MG.data_graphic({
                 title: this.title,
                 description: this.description,
                 //animate_on_load: true,
+                area: false,
                 data: this.values,
                 width: CHART_WIDTH,
                 height: CHART_HEIGHT,
@@ -619,7 +622,12 @@
                 left: LEFT_MARGIN,
                 bottom: BOTTOM_MARGIN,
                 legend: this.legend,
-                legend_target: this.legendDivId
+                legend_target: this.legendDivId,
+                mouseover: function(d, i) {
+                    var format = d3.timeFormat("%b %d, %Y %H:%M:%S %p");
+                    d3.select(this.divId + ' svg .mg-active-datapoint')
+                        .text(format(d.date));
+                }
             });
         };
 
