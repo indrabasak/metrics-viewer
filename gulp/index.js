@@ -51,6 +51,13 @@ gulp.task('build:js', ['clean'], function () {
                             cjs: 'MG',
                             global: 'MG',
                             param: 'MG'
+                        },
+                        {
+                            name: 'd3',
+                            amd: 'd3',
+                            cjs: 'd3',
+                            global: 'd3',
+                            param: 'd3'
                         }];
                 },
                 exports: function () {
@@ -78,7 +85,8 @@ gulp.task('compile:js', ['clean'], function () {
                 warning_level: 'VERBOSE',
                 externs: [
                     'lib/externs/jquery-3.1.js',
-                    'lib/externs/metricgraphics-2.10.1.js'
+                    'lib/externs/metricgraphics-2.11.0.js',
+                    'lib/externs/d3_v4.7_externs.js'
                 ]
             }
         }))
