@@ -7,7 +7,7 @@ description: JavaScript library for displaying Dropwizard Metrics
 
 author: Indra Basak
 
-logo: ./examples/images/logo-blue-64px.png
+logo: ./examples/images/logo-md-blue-64px.png
 docs: ./examples/index.html
 demo: ./examples/examples.html
 blog: https://indrabasak.github.io
