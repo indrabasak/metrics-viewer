@@ -1,5 +1,5 @@
 /**
- * Copyright [2016] [Indra Basak]
+ * Copyright [2020] [Indra Basak]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,14 +11,16 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
 **/
 
 /**
- * MetricsViewer is used for viewing Drop Wizard metrics as line charts. The charts
- * are based on MetricsGraphics.js library. Here is an example, on how to use the library.
- * <p/>
- * <pre>
- *   //create different charts
+ *
+ * @file MetricsViewer is used for viewing Drop Wizard metrics as line charts. The charts
+ * are based on <code>MetricsGraphics.js</code> library. Here is an example, on how to use the library.
+ *
+ * @example
+ * //create different charts
  *   metricsViewer.addCounter("#my-div-counter", "Counter Example Title",
  *       "Counter Example Description", "counter.test.metric.a");
  *
@@ -44,17 +46,21 @@
  *
  *   //refreshing the metric viewer with new metric data
  *   metricsViewer.refresh(data);
- * </pre>
+ *
+ * @name metricsViewer
+ * @namespace metricsViewer
  *
  * @author Indra Basak
  * @since November 2016
+ * @license Apache-2.0
  */
-
 (function (metricsViewer, $) {
     'use strict';
 
     /**
      * Create a metric viewer to display a metric of type 'counter'.
+     * @function
+     * @name metricsViewer#addCounter
      *
      * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
      * @param {string} title the title of the chart
@@ -71,6 +77,8 @@
 
     /**
      * Creates a metric viewer to display multiple metrics of type 'counter'
+     * @function
+     * @name metricsViewer#addMultiCounter
      *
      * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
      * @param {string} title the title of the chart
@@ -94,6 +102,8 @@
 
     /**
      * Create a metric viewer to display a metric of type 'gauge'.
+     * @function
+     * @name metricsViewer#addGauge
      *
      * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
      * @param {string} title the title of the chart
@@ -110,6 +120,8 @@
 
     /**
      * Creates a metric viewer to display multiple metrics of type 'gauge'
+     * @function
+     * @name metricsViewer#addMultiGauge
      *
      * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
      * @param {string} title the title of the chart
@@ -134,6 +146,8 @@
     /**
      * Create a metric viewer to display a metric of type 'meter'. It displays four different values in
      * one chart - 1 min rate, 5 min rate, 15 min rate, and mean rate.
+     * @function
+     * @name metricsViewer#addMeter
      *
      * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
      * @param {string} title the title of the chart
@@ -155,6 +169,8 @@
 
     /**
      * Create a metric viewer to display a metric property of type 'meter'.
+     * @function
+     * @name metricsViewer#addMeterWithProperty
      *
      * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
      * @param {string} title the title of the chart
@@ -176,11 +192,15 @@
 
     /**
      * Create a metric viewer to display a metric of type 'time'. It displays 3 line charts:
-     * <li>
-     *     <ol>Duration chart showing the min, mean, and max metrics</ol>
-     *     <ol>Histogram chart showing the percentile metrics</ol>
-     *     <ol>Frequency chart showing the rate metrics</ol>
-     * </li>
+     *
+     * <ul>
+     *     <li>Duration chart showing the min, mean, and max metrics</li>
+     *     <li>Histogram chart showing the percentile metrics</li>
+     *     <li>Frequency chart showing the rate metrics</li>
+     * </ul>
+     *
+     * @function
+     * @name metricsViewer#addTimer
      *
      * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
      * @param {string} title the title of the chart
@@ -220,6 +240,8 @@
 
     /**
      * Create a metric viewer to display a metric property of type 'time'.
+     * @function
+     * @name metricsViewer#addTimerWithProperty
      *
      * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
      * @param {string} title the title of the chart
@@ -254,14 +276,18 @@
 
     /**
      * Create a metric viewer to display the JVM metrics. It displays the following line charts:
-     * <li>
-     *     <ol>Memory usage</ol>
-     *     <ol>Heap usage</ol>
-     *     <ol>Eden space usage</ol>
-     *     <ol>Survivor space usage</ol>
-     *     <ol>Old Gen usage</ol>
-     *     <ol>Thread usage </ol>
-     * </li>
+     *
+     * <ul>
+     *   <li>Memory usage</li>
+     *   <li>Heap usage</li>
+     *   <li>Eden space usage</li>
+     *   <li>Survivor space usage</li>
+     *   <li>Old Gen usage</li>
+     *   <li>Thread usage</li>
+     * </ul>
+     *
+     * @function
+     * @name metricsViewer#addJvm
      *
      * @param {string} divId the id of the HTML division tag where the metric chart will be displayed
      * @param {string} title the title of the chart
@@ -317,6 +343,8 @@
 
     /**
      * Initializes the metric viewer
+     * @function
+     * @name metricsViewer#init
      */
     metricsViewer.init = function () {
         for (var i = 0; i < graphs.length; i++) {
@@ -327,6 +355,8 @@
     /**
      * Refreshes the metric view with new data. Each metric is cashed up to the 100 metric points. Older metrics are
      * removed once it reaches the threshold.
+     * @function
+     * @name metricsViewer#refresh
      *
      * @param {string} json the metric data in json format
      */
@@ -339,6 +369,8 @@
 
     /**
      * Clears all the graphs from the metrics viewer
+     * @function
+     * @name metricsViewer#clear
      */
     metricsViewer.clear = function () {
         while(graphs.length) {
@@ -368,6 +400,7 @@
     //////////////////////////////////////////////////////////////////////////////////////////////////
     /**
      * Types of metrics
+     * @readonly
      * @enum {Object}
      *
      */
@@ -486,8 +519,7 @@
      * @constructor
      */
     function MetricData(date, value) {
-        this.date = MG.clone(date);
-        //this.data = date;
+        this.date = new Date(date.valueOf());
         this.value = value;
     }
 

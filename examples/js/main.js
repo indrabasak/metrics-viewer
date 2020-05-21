@@ -56,7 +56,7 @@
 
             $('.head ul li a.viewer').removeClass('active');
             $(this).toggleClass('active');
-            $('#dark').attr({href: '../lib/css/metricsgraphics-dark.css'});
+            $('#dark').attr({href: '../lib/css/metrics-graphics-2.15.6/metricsgraphics-dark.css'});
             $('#dark-code').attr({href : 'css/railscasts.css'});
             $('#mv-dark').attr({href: '../dist/css/metricsviewer-dark.css'});
 

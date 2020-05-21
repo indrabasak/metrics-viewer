@@ -11,3 +11,5 @@ other/htaccess.txt
 bare.html
 
 npm-debug.log
+
+package-lock.json

@@ -21,16 +21,16 @@ Other examples can be found on the [examples](https://cdn.rawgit.com/indrabasak/
 
 ## Get Started
 1. Download the javascript and css files from [dist](dist) directory.
-2. Download the MetricsGraphics files either [lib](lib) directory or from [MetricsGraphics](https://github.com/mozilla/metrics-graphics/releases) site.The current version of MetricsViewer.js is based on MetricsGraphics.js v2.10.1 milestone.
+2. Download the MetricsGraphics files either [lib](lib) directory or from [MetricsGraphics](https://github.com/mozilla/metrics-graphics/releases) site.The current version of MetricsViewer.js is based on MetricsGraphics.js v2.15.6 release.
 3. The documentation can be [here](https://cdn.rawgit.com/indrabasak/metrics-viewer/f7856ae7ac5b21cf5509de27a3a2534bf0a07696/examples/index.html).
 4. Follow the working examples [here](https://cdn.rawgit.com/indrabasak/metrics-viewer/master/examples/examples.html).
 
 ## Dependencies
-The MetricsViewer depends on the following libraries:
-1. [MetricsGraphics.js](http://metricsgraphicsjs.org) is a JavaScript library for visualizing time-series data.
-2. [D3](http://d3js.org) is a JavaScript library for manipulating documents based on data. MetricsGraphics.js is based
+The MetricsViewer 2.0 version depends on the following libraries:
+1. [MetricsGraphics.js (2.15.6)](http://metricsgraphicsjs.org) is a JavaScript library for visualizing time-series data.
+2. [D3 (v15.16.0)](http://d3js.org) is a JavaScript library for manipulating documents based on data. MetricsGraphics.js is based
  on D3 library.
-3. [jQuery](http://jquery.com/) is a quintessential JavaScriptIt for manipulating HTML documents.
+3. [jQuery (3.5.1)](http://jquery.com/) is a quintessential JavaScript for manipulating HTML documents.
 
 # Build
 1. Check out the [library](ccc).

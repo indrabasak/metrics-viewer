@@ -10,5 +10,6 @@
   "validthis": true,
   "loopfunc": true,
   "sub": true,
-  "node": true
+  "node": true,
+  "esversion": 6
 }
